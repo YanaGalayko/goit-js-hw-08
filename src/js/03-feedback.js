@@ -11,10 +11,10 @@ import throttle from 'lodash.throttle'
 
 const LS_KEY = 'feedback-form-state';
 
-const form = document.querySelector('.feedback-form');
+formEl = document.querySelector('.feedback-form');
 
-form.addEventListener('input', throttle(inputData, 500));
-form.addEventListener('submit', submitForm);
+formEl.addEventListener('input', throttle(inputData, 500));
+formEl.addEventListener('submit', submitForm);
 
 let dataForm = JSON.parse(localStorage.getItem(LS_KEY)) || {};
 const { email, message } = form.elements;
