@@ -16,11 +16,16 @@ const currentTime = localStorage.getItem("videoplayer-current-time")
 console.log(currentTime);
 
 player.setCurrentTime(currentTime).then(function(seconds) {
-}).catch(function(error) {
-    switch (error.name) {
-        case 'RangeError':
-            break;
-        default:
-            break;
-    }
-});
+    localStorage.setItem("videoplayer-current-time", JSON.stringify(seconds)) 
+ })
+
+// player.setCurrentTime(currentTime).then(function(seconds) {
+// }).catch(function(error) {
+//     switch (error.name) {
+//         case 'RangeError':
+//             break;
+//         default:
+//             break;
+//     }
+// });
+
